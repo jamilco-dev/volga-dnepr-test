@@ -1,10 +1,11 @@
 object frmQtyLines: TfrmQtyLines
   Left = 838
   Top = 401
-  Width = 513
-  Height = 175
   BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
   Caption = #1042#1074#1077#1076#1080#1090#1077' '#1082#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1089#1090#1088#1086#1082
+  ClientHeight = 136
+  ClientWidth = 455
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,7 +18,7 @@ object frmQtyLines: TfrmQtyLines
   object pnButtons: TPanel
     Left = 0
     Top = 67
-    Width = 497
+    Width = 455
     Height = 69
     Align = alBottom
     BevelInner = bvRaised
@@ -30,7 +31,7 @@ object frmQtyLines: TfrmQtyLines
       Height = 43
       Caption = 'Ok'
       ModalResult = 1
-      TabOrder = 0
+      TabOrder = 1
       Glyph.Data = {
         36100000424D3610000000000000360000002800000020000000200000000100
         2000000000000010000000000000000000000000000000000000000000000000
@@ -165,13 +166,13 @@ object frmQtyLines: TfrmQtyLines
       LookAndFeel.Kind = lfFlat
     end
     object btnSave: TcxButton
-      Left = 304
+      Left = 256
       Top = 15
       Width = 184
       Height = 43
       Caption = #1054#1090#1084#1077#1085#1080#1090#1100
       ModalResult = 2
-      TabOrder = 1
+      TabOrder = 0
       Glyph.Data = {
         36100000424D3610000000000000360000002800000020000000200000000100
         2000000000000010000000000000000000000000000000000000000000000000
@@ -320,5 +321,14 @@ object frmQtyLines: TfrmQtyLines
       Value = 100
       Width = 121
     end
+  end
+  object cxSpinEdit1: TcxSpinEdit
+    Left = 16
+    Top = 21
+    Properties.MaxValue = 1000.000000000000000000
+    Properties.MinValue = 100.000000000000000000
+    TabOrder = 1
+    Value = 100
+    Width = 421
   end
 end

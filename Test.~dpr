@@ -2,12 +2,14 @@ program Test;
 
 uses
   Forms,
-  frmMain in 'frmMain.pas' {FormMain};
+  frmMain in 'frmMain.pas' {FormMain},
+  progBar in 'progBar.pas' {Form1};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.CreateForm(TFormMain, FormMain);
+  Application.CreateForm(TForm1, Form1);
   Application.Run;
 end.

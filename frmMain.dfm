@@ -309,15 +309,6 @@ object FormMain: TFormMain
       TabOrder = 2
       Width = 121
     end
-    object edQty: TcxSpinEdit
-      Left = 892
-      Top = 21
-      Properties.MaxValue = 1000.000000000000000000
-      Properties.MinValue = 100.000000000000000000
-      TabOrder = 3
-      Value = 100
-      Width = 121
-    end
   end
   object grdMain: TcxGrid
     Left = 0

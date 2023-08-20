@@ -16,7 +16,6 @@ type
     pnButtons: TPanel;
     btnLoad: TcxButton;
     btnSave: TcxButton;
-    edQty: TcxSpinEdit;
     cxProgressBar1: TcxProgressBar;
     grdMain: TcxGrid;
     view1: TcxGridTableView;
