@@ -1,7 +1,7 @@
 object FormMain: TFormMain
   Left = 361
   Top = 229
-  Width = 1305
+  Width = 997
   Height = 675
   Caption = 'Test '#1092#1086#1088#1084#1072
   Color = clBtnFace
@@ -16,7 +16,7 @@ object FormMain: TFormMain
   object pnButtons: TPanel
     Left = 0
     Top = 567
-    Width = 1289
+    Width = 981
     Height = 69
     Align = alBottom
     BevelInner = bvRaised
@@ -303,34 +303,80 @@ object FormMain: TFormMain
         0000000000000000000000000000000000000000000000000000}
       LookAndFeel.Kind = lfFlat
     end
-    object cxProgressBar1: TcxProgressBar
-      Left = 764
-      Top = 22
-      TabOrder = 2
-      Width = 121
-    end
   end
   object grdMain: TcxGrid
     Left = 0
     Top = 0
-    Width = 1289
+    Width = 981
     Height = 567
     Align = alClient
     BorderWidth = 1
     TabOrder = 1
-    object view1: TcxGridTableView
+    LookAndFeel.Kind = lfFlat
+    object dbView: TcxGridDBTableView
       NavigatorButtons.ConfirmDelete = False
+      DataController.DataSource = dsMemData
       DataController.Summary.DefaultGroupSummaryItems = <>
       DataController.Summary.FooterSummaryItems = <>
       DataController.Summary.SummaryGroups = <>
+      object dbViewRecId: TcxGridDBColumn
+        Caption = '##'
+        DataBinding.FieldName = 'RecId'
+        HeaderAlignmentHorz = taCenter
+      end
+      object dbViewCHK: TcxGridDBColumn
+        DataBinding.FieldName = 'CHK'
+        HeaderAlignmentHorz = taCenter
+        Width = 92
+      end
+      object dbViewNUM: TcxGridDBColumn
+        DataBinding.FieldName = 'NUM'
+        HeaderAlignmentHorz = taCenter
+        Width = 150
+      end
+      object dbViewSTR: TcxGridDBColumn
+        DataBinding.FieldName = 'STR'
+        HeaderAlignmentHorz = taCenter
+      end
+      object dbViewDAT: TcxGridDBColumn
+        DataBinding.FieldName = 'DAT'
+        HeaderAlignmentHorz = taCenter
+      end
     end
     object lev1: TcxGridLevel
+      GridView = dbView
     end
   end
   object dxMemData: TdxMemData
     Indexes = <>
     SortOptions = []
     Left = 184
-    Top = 44
+    Top = 212
+    object dxMemDataCHK: TBooleanField
+      FieldName = 'CHK'
+      Required = True
+    end
+    object dxMemDataNUM: TFloatField
+      FieldName = 'NUM'
+      Required = True
+      MaxValue = 100.000000000000000000
+    end
+    object dxMemDataSTR: TStringField
+      DisplayWidth = 50
+      FieldName = 'STR'
+      Required = True
+      Size = 4000
+    end
+    object dxMemDataDAT: TDateField
+      DisplayWidth = 15
+      FieldName = 'DAT'
+      Required = True
+      DisplayFormat = 'dd.mm.yyyy'
+    end
+  end
+  object dsMemData: TDataSource
+    DataSet = dxMemData
+    Left = 660
+    Top = 140
   end
 end

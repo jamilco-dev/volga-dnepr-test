@@ -19,7 +19,7 @@ object frmProgress: TfrmProgress
     64)
   PixelsPerInch = 96
   TextHeight = 20
-  object cxProgressBar1: TcxProgressBar
+  object cxProgressBar: TcxProgressBar
     Left = 15
     Top = 16
     Anchors = [akLeft, akTop, akRight]

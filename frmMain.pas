@@ -9,18 +9,27 @@ uses
   cxData, cxDataStorage, DB, dxmdaset, cxGridLevel, cxClasses,
   cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGrid,
   cxProgressBar, cxTextEdit, cxMaskEdit, cxSpinEdit, StdCtrls, cxButtons,
-  ExtCtrls, QtyLines;
+  ExtCtrls, QtyLines, cxDBData, cxGridDBTableView;
 
 type
   TFormMain = class(TForm)
     pnButtons: TPanel;
     btnLoad: TcxButton;
     btnSave: TcxButton;
-    cxProgressBar1: TcxProgressBar;
     grdMain: TcxGrid;
-    view1: TcxGridTableView;
     lev1: TcxGridLevel;
     dxMemData: TdxMemData;
+    dxMemDataCHK: TBooleanField;
+    dxMemDataNUM: TFloatField;
+    dxMemDataSTR: TStringField;
+    dxMemDataDAT: TDateField;
+    dsMemData: TDataSource;
+    dbView: TcxGridDBTableView;
+    dbViewRecId: TcxGridDBColumn;
+    dbViewCHK: TcxGridDBColumn;
+    dbViewNUM: TcxGridDBColumn;
+    dbViewSTR: TcxGridDBColumn;
+    dbViewDAT: TcxGridDBColumn;
     procedure btnLoadClick(Sender: TObject);
   private
     { Private declarations }

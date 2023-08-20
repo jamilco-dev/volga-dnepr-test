@@ -9,7 +9,7 @@ uses
 
 type
   TfrmProgress = class(TForm)
-    cxProgressBar1: TcxProgressBar;
+    cxProgressBar: TcxProgressBar;
   private
     { Private declarations }
   public
