@@ -315,11 +315,11 @@ object FormMain: TFormMain
     LookAndFeel.Kind = lfFlat
     object dbView: TcxGridDBTableView
       NavigatorButtons.ConfirmDelete = False
+      OnCustomDrawCell = dbViewCustomDrawCell
       DataController.DataSource = dsMemData
       DataController.Summary.DefaultGroupSummaryItems = <>
       DataController.Summary.FooterSummaryItems = <>
       DataController.Summary.SummaryGroups = <>
-      OptionsView.Navigator = True
       OptionsView.GridLineColor = clMedGray
       OptionsView.GroupByBox = False
       object dbViewRecId: TcxGridDBColumn

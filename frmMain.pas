@@ -32,6 +32,9 @@ type
     dbViewSTR: TcxGridDBColumn;
     dbViewDAT: TcxGridDBColumn;
     procedure btnLoadClick(Sender: TObject);
+    procedure dbViewCustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
   private
     { Private declarations }
   public
@@ -54,6 +57,28 @@ begin
      ;
   finally
     qtyLines.Free;
+  end;
+end;
+
+procedure TFormMain.dbViewCustomDrawCell(Sender: TcxCustomGridTableView;
+  ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+  var ADone: Boolean);
+begin
+ if AViewInfo.GridRecord.Selected then  
+   begin
+     ACanvas.Brush.Color := $0097FFFF;
+     ACanvas.Font.Color := clWindowText;
+   end;
+
+  with TcxGridDBTableView(Sender).DataController do
+    if AViewInfo.GridRecord.Values[dbViewNUM.Index] = 'estimate' then
+     ;
+       
+  if not(AViewInfo.Item.Name = '') then
+  if AViewInfo.GridRecord.Selected then
+  begin
+    ACanvas.Brush.Color := $0097FFFF;
+    ACanvas.Font.Color:= clWindowText;
   end;
 end;
 
