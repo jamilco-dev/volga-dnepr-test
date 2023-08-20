@@ -1,0 +1,24 @@
+unit QtyLines;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs;
+
+type
+  TfrmQtyLines = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmQtyLines: TfrmQtyLines;
+
+implementation
+
+{$R *.dfm}
+
+end.
