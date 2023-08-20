@@ -9,7 +9,8 @@ uses
   cxData, cxDataStorage, DB, dxmdaset, cxGridLevel, cxClasses,
   cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGrid,
   cxProgressBar, cxTextEdit, cxMaskEdit, cxSpinEdit, StdCtrls, cxButtons,
-  ExtCtrls, QtyLines, cxDBData, cxGridDBTableView;
+  ExtCtrls, QtyLines, cxDBData, cxGridDBTableView, cxCheckBox, cxCalc,
+  cxCalendar, cxMemo;
 
 type
   TFormMain = class(TForm)
@@ -47,9 +48,10 @@ implementation
 procedure TFormMain.btnLoadClick(Sender: TObject);
 var qtyLines: TfrmQtyLines;
 begin
+  qtyLines := TfrmQtyLines.Create(self);   
   try
-    qtyLines := TfrmQtyLines.Create(self);
-    qtyLines.ShowModal;
+    if qtyLines.ShowModal = mrOk then
+     ;
   finally
     qtyLines.Free;
   end;

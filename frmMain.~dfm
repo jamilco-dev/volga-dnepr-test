@@ -320,27 +320,41 @@ object FormMain: TFormMain
       DataController.Summary.FooterSummaryItems = <>
       DataController.Summary.SummaryGroups = <>
       object dbViewRecId: TcxGridDBColumn
+        Caption = '##'
         DataBinding.FieldName = 'RecId'
-        Visible = False
         HeaderAlignmentHorz = taCenter
       end
       object dbViewCHK: TcxGridDBColumn
         DataBinding.FieldName = 'CHK'
+        PropertiesClassName = 'TcxCheckBoxProperties'
+        Properties.Alignment = taCenter
         HeaderAlignmentHorz = taCenter
+        Options.Filtering = False
         Width = 92
       end
       object dbViewNUM: TcxGridDBColumn
         DataBinding.FieldName = 'NUM'
+        PropertiesClassName = 'TcxSpinEditProperties'
+        Properties.Alignment.Horz = taCenter
+        Properties.SpinButtons.Visible = False
+        GroupSummaryAlignment = taCenter
         HeaderAlignmentHorz = taCenter
+        Options.Filtering = False
         Width = 150
       end
       object dbViewSTR: TcxGridDBColumn
         DataBinding.FieldName = 'STR'
+        PropertiesClassName = 'TcxMemoProperties'
         HeaderAlignmentHorz = taCenter
+        Options.Filtering = False
+        Options.Sorting = False
       end
       object dbViewDAT: TcxGridDBColumn
         DataBinding.FieldName = 'DAT'
+        PropertiesClassName = 'TcxDateEditProperties'
+        Properties.Alignment.Horz = taCenter
         HeaderAlignmentHorz = taCenter
+        Options.Filtering = False
       end
     end
     object lev1: TcxGridLevel
@@ -348,7 +362,12 @@ object FormMain: TFormMain
     end
   end
   object dxMemData: TdxMemData
+    Active = True
     Indexes = <>
+    Persistent.Data = {
+      5665728FC2F5285C8FFE3F04000000020000000500040043484B000800000006
+      0004004E554D00A00F0000010004005354520004000000090004004441540001
+      010001000000000000F03F01040000006466736601E4440B00}
     SortOptions = []
     Left = 184
     Top = 212
