@@ -319,6 +319,9 @@ object FormMain: TFormMain
       DataController.Summary.DefaultGroupSummaryItems = <>
       DataController.Summary.FooterSummaryItems = <>
       DataController.Summary.SummaryGroups = <>
+      OptionsView.Navigator = True
+      OptionsView.GridLineColor = clMedGray
+      OptionsView.GroupByBox = False
       object dbViewRecId: TcxGridDBColumn
         Caption = '##'
         DataBinding.FieldName = 'RecId'
@@ -362,7 +365,6 @@ object FormMain: TFormMain
     end
   end
   object dxMemData: TdxMemData
-    Active = True
     Indexes = <>
     Persistent.Data = {
       5665728FC2F5285C8FFE3F04000000020000000500040043484B000800000006
@@ -370,7 +372,7 @@ object FormMain: TFormMain
       010001000000000000F03F01040000006466736601E4440B00}
     SortOptions = []
     Left = 184
-    Top = 212
+    Top = 216
     object dxMemDataCHK: TBooleanField
       FieldName = 'CHK'
       Required = True

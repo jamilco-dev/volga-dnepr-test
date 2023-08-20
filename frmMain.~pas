@@ -48,8 +48,8 @@ implementation
 procedure TFormMain.btnLoadClick(Sender: TObject);
 var qtyLines: TfrmQtyLines;
 begin
+  qtyLines := TfrmQtyLines.Create(self);   
   try
-    qtyLines := TfrmQtyLines.Create(self);
     if qtyLines.ShowModal = mrOk then
      ;
   finally
