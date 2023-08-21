@@ -181,10 +181,6 @@ var fileName:String;
     txtFile : TextFile;
     I: Integer;
 begin
-  {mData.Filtered := False;
-  mData.FilterList. ('NUM = 0');
-  mData.Filtered := True;}
-
   if SaveDialog.Execute then
      begin
         try
