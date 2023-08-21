@@ -332,7 +332,6 @@ object FormMain: TFormMain
         Properties.Alignment.Horz = taCenter
         HeaderAlignmentHorz = taCenter
         Options.Filtering = False
-        Options.Sorting = False
       end
       object dbViewCHK: TcxGridDBColumn
         DataBinding.FieldName = 'CHK'
