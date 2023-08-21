@@ -3,17 +3,23 @@ File_0=SourceModule,'C:\Soft\LIB\DevExpress\ExpressQuantumGrid 6\Sources\cxGridD
 File_1=SourceModule,'C:\Soft\LIB\DevExpress\ExpressQuantumGrid 6\Sources\cxGridDBDataDefinitions.pas',0,1,77,1,56,0,0
 File_2=SourceModule,'C:\Soft\LIB\DevExpress\ExpressQuantumGrid 6\Sources\cxGridCustomTableView.pas',0,1,100,1,112,0,0
 File_3=SourceModule,'c:\soft\lib\devexpress\expresseditors library 5\sources\cxGroupBox.pas',0,1,309,36,322,0,0
-File_4=SourceModule,'C:\GIT\volga-dnepr-test\QtyLines.pas',0,1,1,95,18,1,0
-File_5=SourceModule,'C:\GIT\volga-dnepr-test\progBar.pas',0,1,1,38,8,1,0
-File_6=SourceModule,'c:\soft\lib\devexpress\expresseditors library 5\sources\cxEdit.pas',0,1,1191,35,1204,0,0
-File_7=SourceModule,'c:\soft\lib\devexpress\expresslibrary\sources\cxContainer.pas',0,1,420,31,433,0,0
-File_8=SourceModule,'c:\soft\lib\devexpress\expresslibrary\sources\cxControls.pas',0,1,282,1,295,0,0
+File_4=SourceModule,'C:\GIT\volga-dnepr-test\progBar.pas',0,1,1,38,8,1,0
+File_5=SourceModule,'c:\soft\lib\devexpress\expresseditors library 5\sources\cxEdit.pas',0,1,1191,35,1204,0,0
+File_6=SourceModule,'c:\soft\lib\devexpress\expresslibrary\sources\cxContainer.pas',0,1,420,31,433,0,0
+File_7=SourceModule,'c:\soft\lib\devexpress\expresslibrary\sources\cxControls.pas',0,1,282,1,295,0,0
 
 [Modules]
-Module0=C:\GIT\volga-dnepr-test\frmMain.pas
-Module1=c:\program files (x86)\borland\delphi7\source\rtl\Win\Windows.pas
-Count=2
+Module0=C:\GIT\volga-dnepr-test\QtyLines.pas
+Module1=C:\GIT\volga-dnepr-test\frmMain.pas
+Module2=c:\program files (x86)\borland\delphi7\source\rtl\Win\Windows.pas
+Module3=C:\GIT\volga-dnepr-test\Test.dpr
+Count=4
 EditWindowCount=1
+
+[C:\GIT\volga-dnepr-test\QtyLines.pas]
+ModuleType=SourceModule
+FormState=1
+FormOnTop=0
 
 [C:\GIT\volga-dnepr-test\frmMain.pas]
 ModuleType=SourceModule
@@ -26,6 +32,7 @@ FormState=0
 FormOnTop=0
 
 [C:\GIT\volga-dnepr-test\Test.dpr]
+ModuleType=SourceModule
 FormState=0
 FormOnTop=0
 
@@ -34,10 +41,12 @@ FormState=0
 FormOnTop=0
 
 [EditWindow0]
-ViewCount=2
-CurrentView=0
+ViewCount=4
+CurrentView=2
 View0=0
 View1=1
+View2=2
+View3=3
 CodeExplorer=CodeExplorer@EditWindow0
 MessageView=MessageView@EditWindow0
 Create=1
@@ -47,26 +56,40 @@ Left=326
 Top=140
 Width=1302
 Height=682
-MaxLeft=-1
-MaxTop=-1
+MaxLeft=-8
+MaxTop=107
 ClientWidth=1286
 ClientHeight=643
 LeftPanelSize=0
 LeftPanelClients=CodeExplorer@EditWindow0
-LeftPanelData=00000400010000000C000000436F64654578706C6F72657200000000000000000000000000000000000100000000000000000C000000436F64654578706C6F726572FFFFFFFF
+LeftPanelData=00000400010000000C000000436F64654578706C6F726572000000000000000000000000000000000001000000000000000000000000FFFFFFFF
 RightPanelSize=0
-BottomPanelSize=85
+BottomPanelSize=0
 BottomPanelClients=MessageView@EditWindow0
-BottomPanelData=000004000000000000000000000000000000000000000000000100000000000000000B0000004D65737361676556696577FFFFFFFF
+BottomPanelData=00000400010000000B0000004D65737361676556696577000000000000000000000000000000000001000000000000000000000000FFFFFFFF
 
 [View0]
 Module=C:\GIT\volga-dnepr-test\frmMain.pas
-CursorX=1
-CursorY=86
-TopLine=86
+CursorX=82
+CursorY=56
+TopLine=49
 LeftCol=1
 
 [View1]
+Module=C:\GIT\volga-dnepr-test\Test.dpr
+CursorX=1
+CursorY=10
+TopLine=1
+LeftCol=1
+
+[View2]
+Module=C:\GIT\volga-dnepr-test\QtyLines.pas
+CursorX=9
+CursorY=17
+TopLine=1
+LeftCol=1
+
+[View3]
 Module=c:\program files (x86)\borland\delphi7\source\rtl\Win\Windows.pas
 CursorX=1
 CursorY=24337
@@ -76,8 +99,27 @@ LeftCol=1
 [Watches]
 Count=0
 
+[WatchWindow]
+WatchColumnWidth=100
+WatchShowColumnHeaders=1
+Create=1
+Visible=1
+State=0
+Left=0
+Top=12
+Width=1596
+Height=110
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=1596
+ClientHeight=110
+TBDockHeight=157
+LRDockWidth=1596
+Dockable=1
+
 [Breakpoints]
-Count=0
+Count=1
+Breakpoint0='C:\GIT\volga-dnepr-test\frmMain.pas',62,'',0,1,'',1,0,0,'',1,'','',''
 
 [AddressBreakpoints]
 Count=0
@@ -113,6 +155,23 @@ TBDockHeight=318
 LRDockWidth=446
 Dockable=1
 
+[CPUWindow]
+Create=1
+Visible=0
+State=0
+Left=160
+Top=143
+Width=1599
+Height=794
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=1583
+ClientHeight=755
+DumpPane=79
+DisassemblyPane=187
+RegisterPane=231
+FlagPane=64
+
 [AlignmentPalette]
 Create=1
 Visible=0
@@ -143,9 +202,47 @@ LRDockWidth=190
 Dockable=1
 SplitPos=170
 ArrangeBy=Name
-SelectedItem=OnActivate
+SelectedItem=Caption
 ExpandedItems=BevelEdges,BorderIcons,Colors.AssignedColors,DataBinding,DataController.Filter,DataController.Summary.Options,DateTimeHandling.Filters,Filtering.ColumnPopup,GridView,GridView.DataController.Filter,GridView.DataController.Filter.Options,LevelTabs,LookAndFeel,NavigatorButtons.Append,Persistent,Properties,Properties.Alignment,Properties.SpinButtons,RootLevelOptions,RootLevelStyles,SortOptions,SpeedButtonOptions,Style,Style.Edges,Style.TextStyle,StyleDisabled,Summary
 HiddenCategories=
+
+[BreakpointWindow]
+Create=1
+Visible=0
+State=0
+Left=591
+Top=441
+Width=737
+Height=197
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=721
+ClientHeight=158
+TBDockHeight=197
+LRDockWidth=737
+Dockable=1
+Column0Width=100
+Column1Width=75
+Column2Width=200
+Column3Width=200
+Column4Width=75
+Column5Width=75
+
+[CallStackWindow]
+Create=1
+Visible=1
+State=0
+Left=298
+Top=739
+Width=294
+Height=161
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=278
+ClientHeight=122
+TBDockHeight=161
+LRDockWidth=1596
+Dockable=1
 
 [ObjectTree]
 Create=1
@@ -161,6 +258,38 @@ ClientWidth=247
 ClientHeight=239
 TBDockHeight=278
 LRDockWidth=190
+Dockable=1
+
+[DebugLogView]
+Create=1
+Visible=0
+State=0
+Left=0
+Top=138
+Width=1596
+Height=114
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=1596
+ClientHeight=114
+TBDockHeight=291
+LRDockWidth=1596
+Dockable=1
+
+[LocalVarsWindow]
+Create=1
+Visible=1
+State=0
+Left=0
+Top=138
+Width=1596
+Height=114
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=1596
+ClientHeight=114
+TBDockHeight=204
+LRDockWidth=1596
 Dockable=1
 
 [CodeExplorer@EditWindow0]
@@ -181,7 +310,7 @@ Dockable=1
 
 [MessageView@EditWindow0]
 Create=1
-Visible=1
+Visible=0
 State=0
 Left=12
 Top=0
@@ -196,5 +325,24 @@ LRDockWidth=443
 Dockable=1
 
 [DockHosts]
-DockHostCount=0
+DockHostCount=1
+
+[DockSite0]
+DockSiteType=0
+Create=1
+Visible=1
+State=0
+Left=298
+Top=739
+Width=1612
+Height=291
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=1596
+ClientHeight=252
+TBDockHeight=291
+LRDockWidth=1612
+Dockable=1
+DockClients=DebugLogView,WatchWindow,LocalVarsWindow
+DockSiteData=00000400010000000C00000044656275674C6F6756696577FC00000000000000013C0600000000000001000000007E0000000B000000576174636857696E646F770100000000FC0000000F0000004C6F63616C5661727357696E646F770100000000FC00000000000000FFFFFFFF
 

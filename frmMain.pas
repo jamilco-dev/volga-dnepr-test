@@ -36,7 +36,7 @@ type
       ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
       var ADone: Boolean);
   private
-    { Private declarations }
+    procedure loadData(cnt:Integer);
   public
     { Public declarations }
   end;
@@ -48,6 +48,10 @@ implementation
 
 {$R *.dfm}
 
+procedure TFormMain.loadData(cnt:Integer);
+begin
+     OutputDebugString('This is my message');
+end;
 
 procedure TFormMain.btnLoadClick(Sender: TObject);
 var qtyLines: TfrmQtyLines;
@@ -55,7 +59,7 @@ begin
   qtyLines := TfrmQtyLines.Create(self);   
   try
     if qtyLines.ShowModal = mrOk then
-     ;
+       loadData(qtyLines.edQty.Value);
   finally
     qtyLines.Free;
   end;
