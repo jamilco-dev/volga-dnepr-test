@@ -43,8 +43,8 @@ type
     procedure btnSaveClick(Sender: TObject);
   private
     procedure loadData(cnt:Integer);
-    function GenerateRandomString(const ALength: Integer): ShortString;
-    function GenerateRandomDateTime(Const AFrom, ATo: TDateTime): TDateTime;
+    function generateRandomString(const ALength: Integer): ShortString;
+    function generateRandomDateTime(Const AFrom, ATo: TDateTime): TDateTime;
     procedure saveData;
   public
     { Public declarations }
@@ -60,7 +60,7 @@ uses
 
 {$R *.dfm}
 
-function TFormMain.GenerateRandomDateTime(const AFrom, ATo: TDateTime): TDateTime;
+function TFormMain.generateRandomDateTime(const AFrom, ATo: TDateTime): TDateTime;
 var
   SecsBetween: Longint;
 begin
@@ -71,7 +71,7 @@ begin
   result := AFrom + (Round(SecsBetween * Random) / (60*60*24));
 end;
 
-function TFormMain.GenerateRandomString(const ALength: Integer): ShortString;
+function TFormMain.generateRandomString(const ALength: Integer): ShortString;
 var
   Ch, SequenceLength: Integer;
 const
@@ -104,10 +104,10 @@ begin
           Num := RandomRange(0, 100);
           mData.Data.Items[2].AddValue(@Num);
 
-          VariantToMemDataValue(GenerateRandomString(20), P, mDataSTR);
+          VariantToMemDataValue(generateRandomString(20), P, mDataSTR);
           mData.Data.Items[3].AddValue(P);
 
-          VariantToMemDataValue(GenerateRandomDateTime(StrToDate('01.01.2020'), StrToDate('01.01.2023')), P, mDataDAT);
+          VariantToMemDataValue(generateRandomDateTime(StrToDate('01.01.2020'), StrToDate('01.01.2023')), P, mDataDAT);
           mData.Data.Items[4].AddValue(P);
 
       end;
