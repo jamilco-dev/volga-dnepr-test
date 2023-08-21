@@ -4,10 +4,12 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs;
+  Dialogs, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
+  cxContainer, cxEdit, cxTextEdit, cxMemo;
 
 type
   TfrmFileContext = class(TForm)
+    cxMemo1: TcxMemo;
   private
     { Private declarations }
   public

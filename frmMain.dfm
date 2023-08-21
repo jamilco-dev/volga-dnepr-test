@@ -169,7 +169,9 @@ object FormMain: TFormMain
       Width = 184
       Height = 43
       Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100
+      Enabled = False
       TabOrder = 1
+      OnClick = btnSaveClick
       Glyph.Data = {
         36100000424D3610000000000000360000002800000020000000200000000100
         20000000000000100000000000000000000000000000000000000A08030D6C53
@@ -391,5 +393,12 @@ object FormMain: TFormMain
     DataSet = mData
     Left = 280
     Top = 68
+  end
+  object SaveDialog: TSaveDialog
+    DefaultExt = 'txt'
+    Filter = #1058#1077#1082#1089#1090#1086#1074#1099#1081' '#1092#1072#1081#1083'|*.txt'
+    Options = [ofOverwritePrompt, ofHideReadOnly, ofCreatePrompt, ofEnableSizing]
+    Left = 624
+    Top = 128
   end
 end

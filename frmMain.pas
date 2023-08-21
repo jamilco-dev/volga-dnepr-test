@@ -31,6 +31,7 @@ type
     dbViewCHK: TcxGridDBColumn;
     dbViewNUM: TcxGridDBColumn;
     dbViewDAT: TcxGridDBColumn;
+    SaveDialog: TSaveDialog;
     procedure btnLoadClick(Sender: TObject);
     procedure dbViewCustomDrawCell(Sender: TcxCustomGridTableView;
       ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
@@ -39,10 +40,12 @@ type
       ADataController: TcxCustomDataController; ARecordIndex1,
       ARecordIndex2, AItemIndex: Integer; const V1, V2: Variant;
       var Compare: Integer);
+    procedure btnSaveClick(Sender: TObject);
   private
     procedure loadData(cnt:Integer);
     function GenerateRandomString(const ALength: Integer): ShortString;
     function RandomDateTime(Const AFrom, ATo: TDateTime): TDateTime;
+    procedure saveData;
   public
     { Public declarations }
   end;
@@ -122,7 +125,10 @@ begin
   qtyLines := TfrmQtyLines.Create(self);   
   try
     if qtyLines.ShowModal = mrOk then
-       loadData(qtyLines.edQty.Value);
+       begin
+          loadData(qtyLines.edQty.Value);
+          btnSave.Enabled := true;
+       end;
   finally
     qtyLines.Free;
   end;
@@ -167,6 +173,21 @@ begin
       end
    else
       Compare := VarCompare(V1, V2);
+end;
+
+procedure TFormMain.saveData;
+var fileName:String;
+begin
+  if SaveDialog.Execute then
+     begin
+       fileName := SaveDialog.FileName;
+       ShowMessage(fileName);
+     end
+end;
+
+procedure TFormMain.btnSaveClick(Sender: TObject);
+begin
+  saveData
 end;
 
 end.
