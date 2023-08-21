@@ -203,6 +203,7 @@ begin
            mData.EnableControls;
 
            frmFileContext := TfrmFileContext.Create(Self);
+           frmFileContext.Caption := Format('Τΰιλ: %s', [fileName]);
            frmFileContext.mmFileContext.Lines.LoadFromFile(fileName);
            frmFileContext.ShowModal;
         finally
