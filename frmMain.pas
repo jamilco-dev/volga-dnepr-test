@@ -48,6 +48,7 @@ implementation
 
 {$R *.dfm}
 
+
 procedure TFormMain.btnLoadClick(Sender: TObject);
 var qtyLines: TfrmQtyLines;
 begin
@@ -70,7 +71,7 @@ begin
      ACanvas.Font.Color := clWindowText;
    end;
 
-  with TcxGridDBTableView(Sender).DataController do
+  //with TcxGridDBTableView(Sender).DataController do
     if AViewInfo.GridRecord.Values[dbViewNUM.Index] = 'estimate' then
      ;
        
