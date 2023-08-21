@@ -38,6 +38,7 @@ type
   private
     procedure loadData(cnt:Integer);
     function GenerateRandomString(const ALength: Integer): ShortString;
+    function RandomDateTime(Const AFrom, ATo: TDateTime): TDateTime;
   public
     { Public declarations }
   end;
@@ -49,6 +50,16 @@ implementation
 
 {$R *.dfm}
 
+function TFormMain.RandomDateTime(const AFrom, ATo: TDateTime): TDateTime;
+var
+  SecsBetween: Longint;
+begin
+  if AFrom >= ATo then
+      raise Exception.Create('Time range not correct');
+
+  SecsBetween := Round(60 * 60 * 24 * (ATo - AFrom));
+  result := AFrom + (Round(SecsBetween * Random) / (60*60*24));
+end;
 
 function TFormMain.GenerateRandomString(const ALength: Integer): ShortString;
 var
@@ -86,7 +97,7 @@ begin
           VariantToMemDataValue(GenerateRandomString(20), P, mDataSTR);
           mData.Data.Items[3].AddValue(P);
 
-          VariantToMemDataValue(Now + I, P, mDataDAT);
+          VariantToMemDataValue(RandomDateTime(StrToDate('01.01.2020'), StrToDate('01.01.2023')), P, mDataDAT);
           mData.Data.Items[4].AddValue(P);
 
       end;
