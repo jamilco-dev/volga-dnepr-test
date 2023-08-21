@@ -9,7 +9,7 @@ uses
 
 type
   TfrmFileContext = class(TForm)
-    cxMemo1: TcxMemo;
+    mmFileContext: TcxMemo;
   private
     { Private declarations }
   public

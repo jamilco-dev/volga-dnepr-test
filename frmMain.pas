@@ -9,7 +9,7 @@ uses
   cxData, cxDataStorage, DB, dxmdaset, cxGridLevel, cxClasses,Math,
   cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGrid,
   cxProgressBar, cxTextEdit, cxMaskEdit, cxSpinEdit, StdCtrls, cxButtons,
-  ExtCtrls, QtyLines, cxDBData, cxGridDBTableView, cxCheckBox, cxCalc,
+  ExtCtrls, cxDBData, cxGridDBTableView, cxCheckBox, cxCalc,
   cxCalendar, cxMemo, cxLabel;
 
 type
@@ -56,7 +56,7 @@ var
 implementation
 
 uses
-  cxVariants;
+  cxVariants, fileContext, QtyLines;
 
 {$R *.dfm}
 
@@ -177,11 +177,41 @@ end;
 
 procedure TFormMain.saveData;
 var fileName:String;
+    frmFileContext: TfrmFileContext;
+    txtFile : TextFile;
+    I: Integer;
 begin
+  {mData.Filtered := False;
+  mData.FilterList. ('NUM = 0');
+  mData.Filtered := True;}
+
   if SaveDialog.Execute then
      begin
-       fileName := SaveDialog.FileName;
-       ShowMessage(fileName);
+        try
+           fileName := SaveDialog.FileName;
+           AssignFile(txtFile, fileName);
+           ReWrite(txtFile);
+
+           mData.DisableControls;
+           mData.First;
+
+           while not mData.Eof do
+             begin
+               if mDataCHK.AsBoolean then
+                 begin
+                   WriteLn(txtFile, Format('%s %s', [mDataSTR.AsString, mDataDAT.AsString]));
+                 end;
+               mData.Next;  
+             end;
+           CloseFile(txtFile);
+           mData.EnableControls;
+
+           frmFileContext := TfrmFileContext.Create(Self);
+           frmFileContext.mmFileContext.Lines.LoadFromFile(fileName);
+           frmFileContext.ShowModal;
+        finally
+           frmFileContext.Free
+        end
      end
 end;
 

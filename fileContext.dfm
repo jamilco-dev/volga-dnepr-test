@@ -14,10 +14,11 @@ object frmFileContext: TfrmFileContext
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 20
-  object cxMemo1: TcxMemo
+  object mmFileContext: TcxMemo
     Left = 0
     Top = 0
     Align = alClient
+    Properties.ScrollBars = ssVertical
     Style.BorderStyle = ebsFlat
     TabOrder = 0
     Height = 636
