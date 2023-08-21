@@ -44,7 +44,7 @@ type
   private
     procedure loadData(cnt:Integer);
     function GenerateRandomString(const ALength: Integer): ShortString;
-    function RandomDateTime(Const AFrom, ATo: TDateTime): TDateTime;
+    function GenerateRandomDateTime(Const AFrom, ATo: TDateTime): TDateTime;
     procedure saveData;
   public
     { Public declarations }
@@ -60,7 +60,7 @@ uses
 
 {$R *.dfm}
 
-function TFormMain.RandomDateTime(const AFrom, ATo: TDateTime): TDateTime;
+function TFormMain.GenerateRandomDateTime(const AFrom, ATo: TDateTime): TDateTime;
 var
   SecsBetween: Longint;
 begin
@@ -107,7 +107,7 @@ begin
           VariantToMemDataValue(GenerateRandomString(20), P, mDataSTR);
           mData.Data.Items[3].AddValue(P);
 
-          VariantToMemDataValue(RandomDateTime(StrToDate('01.01.2020'), StrToDate('01.01.2023')), P, mDataDAT);
+          VariantToMemDataValue(GenerateRandomDateTime(StrToDate('01.01.2020'), StrToDate('01.01.2023')), P, mDataDAT);
           mData.Data.Items[4].AddValue(P);
 
       end;
