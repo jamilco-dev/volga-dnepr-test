@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Menus,
   cxControls, cxContainer, cxEdit, cxStyles, cxCustomData, cxFilter,
-  cxData, cxDataStorage, DB, dxmdaset, cxGridLevel, cxClasses,
+  cxData, cxDataStorage, DB, dxmdaset, cxGridLevel, cxClasses,Math,
   cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGrid,
   cxProgressBar, cxTextEdit, cxMaskEdit, cxSpinEdit, StdCtrls, cxButtons,
   ExtCtrls, QtyLines, cxDBData, cxGridDBTableView, cxCheckBox, cxCalc,
@@ -37,6 +37,7 @@ type
       var ADone: Boolean);
   private
     procedure loadData(cnt:Integer);
+    function GenerateRandomString(const ALength: Integer): ShortString;
   public
     { Public declarations }
   end;
@@ -48,9 +49,25 @@ implementation
 
 {$R *.dfm}
 
+
+function TFormMain.GenerateRandomString(const ALength: Integer): ShortString;
+var
+  Ch, SequenceLength: Integer;
+const
+  ACharSequence: String = '¿¡¬√ƒ≈®∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ';
+
+begin
+  SequenceLength := Length(ACharSequence);
+  SetLength(Result, ALength);
+
+  for Ch := 0 to Length(Result) do begin
+    Result[Ch] := ACharSequence[RandomRange(1, SequenceLength)];
+  end;
+end;
+
 procedure TFormMain.loadData(cnt:Integer);
 var
-   I: Integer;
+   I, Num: Integer;
    P: Pointer;
 begin
    mData.Active := True;
@@ -60,36 +77,23 @@ begin
       for I := 1 to cnt do begin
           mData.Data.Items[0].AddValue(@i);
 
-          // Boolean
           VariantToMemDataValue((I mod 2) = 0, P, mDataCHK);
           mData.Data.Items[1].AddValue(P);
 
-          // string
-          VariantToMemDataValue('Number ' + IntToStr(I), P, mDataSTR);
+          Num := RandomRange(0, 100);
+          mData.Data.Items[2].AddValue(@Num);
+
+          VariantToMemDataValue(GenerateRandomString(20), P, mDataSTR);
           mData.Data.Items[3].AddValue(P);
 
-          // Integer
-          // mData.Data.Items[2].AddValue(@I);
+          VariantToMemDataValue(Now + I, P, mDataDAT);
+          mData.Data.Items[4].AddValue(P);
 
-
-
-          // Float
-          //VariantToMemDataValue(1 / I, P, mDataFloat);
-          //mData.Data.Items[4].AddValue(P);
-
-          // Date
-          //VariantToMemDataValue(Now + I, P, mDataDate);
-          //mData.Data.Items[5].AddValue(P);
-
-          // Date and time
-          //VariantToMemDataValue(Now + 1 / I, P, mDataDateTime);
-          //mData.Data.Items[6].AddValue(P);
       end;
       mData.FillBookmarks;
       mData.First;
    finally
       FreeMem(P);
-      // Enabled the data controls
       mData.EnableControls;
    end;
 end;

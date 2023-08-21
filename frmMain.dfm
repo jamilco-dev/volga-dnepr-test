@@ -327,6 +327,7 @@ object FormMain: TFormMain
         DataBinding.FieldName = 'RecId'
         PropertiesClassName = 'TcxLabelProperties'
         Properties.Alignment.Horz = taCenter
+        HeaderAlignmentHorz = taCenter
         Options.Filtering = False
       end
       object dbViewCHK: TcxGridDBColumn
@@ -356,6 +357,7 @@ object FormMain: TFormMain
         Properties.Alignment.Horz = taCenter
         HeaderAlignmentHorz = taCenter
         Options.Filtering = False
+        Width = 163
       end
     end
     object lev1: TcxGridLevel
