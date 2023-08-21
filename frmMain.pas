@@ -125,22 +125,23 @@ procedure TFormMain.dbViewCustomDrawCell(Sender: TcxCustomGridTableView;
   ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
   var ADone: Boolean);
 begin
- if AViewInfo.GridRecord.Selected then  
-   begin
-     ACanvas.Brush.Color := $0097FFFF;
-     ACanvas.Font.Color := clWindowText;
-   end;
-
-  //with TcxGridDBTableView(Sender).DataController do
-    //if AViewInfo.GridRecord.Values[dbViewNUM.Index] = 'estimate' then
-     //;
-       
-  if not(AViewInfo.Item.Name = '') then
-  if AViewInfo.GridRecord.Selected then
-  begin
-    ACanvas.Brush.Color := $0097FFFF;
-    ACanvas.Font.Color:= clWindowText;
-  end;
+  if AViewInfo.Item.Name = 'dbViewSTR' then
+     begin
+        case AViewInfo.GridRecord.Values[dbViewNUM.Index] of
+           0..50: begin
+                     ACanvas.Brush.Color := clYellow;
+                     ACanvas.Font.Color:= clBlue;
+                  end;   
+           51..75: begin
+                      ACanvas.Brush.Color := clGreen;
+                      ACanvas.Font.Color:= clWhite;
+                   end;
+           76..100: begin
+                      ACanvas.Brush.Color := clRed;
+                      ACanvas.Font.Color:= clWindowText;
+                    end
+        end
+     end
 end;
 
 end.

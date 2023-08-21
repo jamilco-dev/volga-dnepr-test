@@ -329,6 +329,7 @@ object FormMain: TFormMain
         Properties.Alignment.Horz = taCenter
         HeaderAlignmentHorz = taCenter
         Options.Filtering = False
+        Options.Sorting = False
       end
       object dbViewCHK: TcxGridDBColumn
         DataBinding.FieldName = 'CHK'
@@ -336,6 +337,7 @@ object FormMain: TFormMain
         Properties.Alignment = taCenter
         HeaderAlignmentHorz = taCenter
         Options.Filtering = False
+        Options.Sorting = False
         Width = 62
       end
       object dbViewNUM: TcxGridDBColumn
@@ -343,6 +345,7 @@ object FormMain: TFormMain
         PropertiesClassName = 'TcxLabelProperties'
         HeaderAlignmentHorz = taCenter
         Options.Filtering = False
+        Options.Sorting = False
       end
       object dbViewSTR: TcxGridDBColumn
         DataBinding.FieldName = 'STR'
@@ -357,6 +360,7 @@ object FormMain: TFormMain
         Properties.Alignment.Horz = taCenter
         HeaderAlignmentHorz = taCenter
         Options.Filtering = False
+        Options.Sorting = False
         Width = 163
       end
     end
