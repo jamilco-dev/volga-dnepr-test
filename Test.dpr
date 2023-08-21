@@ -4,7 +4,7 @@ uses
   Forms,
   frmMain in 'frmMain.pas' {FormMain},
   QtyLines in 'QtyLines.pas' {frmQtyLines},
-  progBar in 'progBar.pas' {frmProgress};
+  fileContext in 'fileContext.pas' {frmFileContext};
 
 {$R *.res}
 

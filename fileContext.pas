@@ -1,15 +1,13 @@
-unit progBar;
+unit fileContext;
 
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
-  cxContainer, cxEdit, cxProgressBar;
+  Dialogs;
 
 type
-  TfrmProgress = class(TForm)
-    cxProgressBar: TcxProgressBar;
+  TfrmFileContext = class(TForm)
   private
     { Private declarations }
   public
@@ -17,7 +15,7 @@ type
   end;
 
 var
-  frmProgress: TfrmProgress;
+  frmFileContext: TfrmFileContext;
 
 implementation
 

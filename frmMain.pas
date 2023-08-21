@@ -35,6 +35,10 @@ type
     procedure dbViewCustomDrawCell(Sender: TcxCustomGridTableView;
       ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
       var ADone: Boolean);
+    procedure dbViewDataControllerCompare(
+      ADataController: TcxCustomDataController; ARecordIndex1,
+      ARecordIndex2, AItemIndex: Integer; const V1, V2: Variant;
+      var Compare: Integer);
   private
     procedure loadData(cnt:Integer);
     function GenerateRandomString(const ALength: Integer): ShortString;
@@ -47,6 +51,9 @@ var
   FormMain: TFormMain;
 
 implementation
+
+uses
+  cxVariants;
 
 {$R *.dfm}
 
@@ -142,6 +149,24 @@ begin
                     end
         end
      end
+end;
+
+procedure TFormMain.dbViewDataControllerCompare(
+  ADataController: TcxCustomDataController; ARecordIndex1, ARecordIndex2,
+  AItemIndex: Integer; const V1, V2: Variant; var Compare: Integer);
+var  
+  ASortColumnIndex: Integer;  
+  AValue1, AValue2: Variant;  
+begin  
+   if (AItemIndex = dbViewSTR.Index) then
+      begin
+         ASortColumnIndex := dbViewNUM.Index;
+         AValue1 := ADataController.Values[ARecordIndex1, ASortColumnIndex];
+         AValue2 := ADataController.Values[ARecordIndex2, ASortColumnIndex];
+         Compare := VarCompare(AValue1, AValue2);
+      end
+   else
+      Compare := VarCompare(V1, V2);
 end;
 
 end.

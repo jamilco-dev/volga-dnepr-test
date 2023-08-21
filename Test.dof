@@ -134,16 +134,9 @@ OriginalFilename=
 ProductName=
 ProductVersion=1.0.0.0
 Comments=
-[HistoryLists\hlConditionals]
-Count=2
-Item0=LONGSTRINGS
-Item1=$LONGSTRINGS
 [HistoryLists\hlUnitAliases]
 Count=1
 Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
 [HistoryLists\hlSearchPath]
-Count=4
+Count=1
 Item0=C:\VCL\Delphi7\DCU;C:\Soft\LIB\DevExpress\XP Theme Manager\Sources;C:\Soft\LIB\DevExpress\ExpressQuantumGrid 6\Sources
-Item1=C:\VCL\Delphi7\DCU;C:\Soft\LIB\DevExpress\XP Theme Manager\Sources
-Item2=C:\VCL\Delphi7\DCU;C:\VCL\Delphi7\RES
-Item3=C:\VCL\Delphi7\DCU

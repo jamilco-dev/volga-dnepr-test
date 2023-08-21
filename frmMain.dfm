@@ -320,6 +320,7 @@ object FormMain: TFormMain
       DataController.Summary.DefaultGroupSummaryItems = <>
       DataController.Summary.FooterSummaryItems = <>
       DataController.Summary.SummaryGroups = <>
+      DataController.OnCompare = dbViewDataControllerCompare
       OptionsView.GridLineColor = clMedGray
       OptionsView.GroupByBox = False
       object dbViewRecId: TcxGridDBColumn
@@ -337,7 +338,6 @@ object FormMain: TFormMain
         Properties.Alignment = taCenter
         HeaderAlignmentHorz = taCenter
         Options.Filtering = False
-        Options.Sorting = False
         Width = 62
       end
       object dbViewNUM: TcxGridDBColumn
@@ -345,7 +345,6 @@ object FormMain: TFormMain
         PropertiesClassName = 'TcxLabelProperties'
         HeaderAlignmentHorz = taCenter
         Options.Filtering = False
-        Options.Sorting = False
       end
       object dbViewSTR: TcxGridDBColumn
         DataBinding.FieldName = 'STR'
@@ -360,7 +359,6 @@ object FormMain: TFormMain
         Properties.Alignment.Horz = taCenter
         HeaderAlignmentHorz = taCenter
         Options.Filtering = False
-        Options.Sorting = False
         Width = 163
       end
     end
