@@ -10,7 +10,7 @@ uses
   cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGrid,
   cxProgressBar, cxTextEdit, cxMaskEdit, cxSpinEdit, StdCtrls, cxButtons,
   ExtCtrls, QtyLines, cxDBData, cxGridDBTableView, cxCheckBox, cxCalc,
-  cxCalendar, cxMemo;
+  cxCalendar, cxMemo, cxLabel;
 
 type
   TFormMain = class(TForm)
@@ -19,17 +19,17 @@ type
     btnSave: TcxButton;
     grdMain: TcxGrid;
     lev1: TcxGridLevel;
-    dxMemData: TdxMemData;
-    dxMemDataCHK: TBooleanField;
-    dxMemDataNUM: TFloatField;
-    dxMemDataSTR: TStringField;
-    dxMemDataDAT: TDateField;
-    dsMemData: TDataSource;
+    mData: TdxMemData;
     dbView: TcxGridDBTableView;
+    DataSource: TDataSource;
+    mDataSTR: TStringField;
     dbViewRecId: TcxGridDBColumn;
+    dbViewSTR: TcxGridDBColumn;
+    mDataCHK: TBooleanField;
+    mDataNUM: TIntegerField;
+    mDataDAT: TDateField;
     dbViewCHK: TcxGridDBColumn;
     dbViewNUM: TcxGridDBColumn;
-    dbViewSTR: TcxGridDBColumn;
     dbViewDAT: TcxGridDBColumn;
     procedure btnLoadClick(Sender: TObject);
     procedure dbViewCustomDrawCell(Sender: TcxCustomGridTableView;
@@ -49,9 +49,50 @@ implementation
 {$R *.dfm}
 
 procedure TFormMain.loadData(cnt:Integer);
+var
+   I: Integer;
+   P: Pointer;
 begin
-     OutputDebugString('This is my message');
-end;
+   mData.Active := True;
+   mData.DisableControls;
+   GetMem(P, 255);
+   try
+      for I := 1 to cnt do begin
+          mData.Data.Items[0].AddValue(@i);
+
+          // Boolean
+          VariantToMemDataValue((I mod 2) = 0, P, mDataCHK);
+          mData.Data.Items[1].AddValue(P);
+
+          // string
+          VariantToMemDataValue('Number ' + IntToStr(I), P, mDataSTR);
+          mData.Data.Items[3].AddValue(P);
+
+          // Integer
+          // mData.Data.Items[2].AddValue(@I);
+
+
+
+          // Float
+          //VariantToMemDataValue(1 / I, P, mDataFloat);
+          //mData.Data.Items[4].AddValue(P);
+
+          // Date
+          //VariantToMemDataValue(Now + I, P, mDataDate);
+          //mData.Data.Items[5].AddValue(P);
+
+          // Date and time
+          //VariantToMemDataValue(Now + 1 / I, P, mDataDateTime);
+          //mData.Data.Items[6].AddValue(P);
+      end;
+      mData.FillBookmarks;
+      mData.First;
+   finally
+      FreeMem(P);
+      // Enabled the data controls
+      mData.EnableControls;
+   end;
+end;
 
 procedure TFormMain.btnLoadClick(Sender: TObject);
 var qtyLines: TfrmQtyLines;
@@ -76,8 +117,8 @@ begin
    end;
 
   //with TcxGridDBTableView(Sender).DataController do
-    if AViewInfo.GridRecord.Values[dbViewNUM.Index] = 'estimate' then
-     ;
+    //if AViewInfo.GridRecord.Values[dbViewNUM.Index] = 'estimate' then
+     //;
        
   if not(AViewInfo.Item.Name = '') then
   if AViewInfo.GridRecord.Selected then

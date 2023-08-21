@@ -15,7 +15,6 @@ type
     btnSave: TcxButton;
     cxProgressBar1: TcxProgressBar;
     edQty: TcxSpinEdit;
-    cxSpinEdit1: TcxSpinEdit;
   private
     { Private declarations }
   public

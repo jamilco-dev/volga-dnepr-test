@@ -312,21 +312,14 @@ object frmQtyLines: TfrmQtyLines
       TabOrder = 2
       Width = 121
     end
-    object edQty: TcxSpinEdit
-      Left = 892
-      Top = 21
-      Properties.MaxValue = 1000.000000000000000000
-      Properties.MinValue = 100.000000000000000000
-      TabOrder = 3
-      Value = 100
-      Width = 121
-    end
   end
-  object cxSpinEdit1: TcxSpinEdit
+  object edQty: TcxSpinEdit
     Left = 16
-    Top = 21
+    Top = 20
     Properties.MaxValue = 1000.000000000000000000
     Properties.MinValue = 100.000000000000000000
+    Properties.SpinButtons.Visible = False
+    Style.BorderStyle = ebsFlat
     TabOrder = 1
     Value = 100
     Width = 421

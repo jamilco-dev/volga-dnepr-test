@@ -316,7 +316,7 @@ object FormMain: TFormMain
     object dbView: TcxGridDBTableView
       NavigatorButtons.ConfirmDelete = False
       OnCustomDrawCell = dbViewCustomDrawCell
-      DataController.DataSource = dsMemData
+      DataController.DataSource = DataSource
       DataController.Summary.DefaultGroupSummaryItems = <>
       DataController.Summary.FooterSummaryItems = <>
       DataController.Summary.SummaryGroups = <>
@@ -325,7 +325,9 @@ object FormMain: TFormMain
       object dbViewRecId: TcxGridDBColumn
         Caption = '##'
         DataBinding.FieldName = 'RecId'
-        HeaderAlignmentHorz = taCenter
+        PropertiesClassName = 'TcxLabelProperties'
+        Properties.Alignment.Horz = taCenter
+        Options.Filtering = False
       end
       object dbViewCHK: TcxGridDBColumn
         DataBinding.FieldName = 'CHK'
@@ -333,24 +335,20 @@ object FormMain: TFormMain
         Properties.Alignment = taCenter
         HeaderAlignmentHorz = taCenter
         Options.Filtering = False
-        Width = 92
+        Width = 62
       end
       object dbViewNUM: TcxGridDBColumn
         DataBinding.FieldName = 'NUM'
-        PropertiesClassName = 'TcxSpinEditProperties'
-        Properties.Alignment.Horz = taCenter
-        Properties.SpinButtons.Visible = False
-        GroupSummaryAlignment = taCenter
+        PropertiesClassName = 'TcxLabelProperties'
         HeaderAlignmentHorz = taCenter
         Options.Filtering = False
-        Width = 150
       end
       object dbViewSTR: TcxGridDBColumn
         DataBinding.FieldName = 'STR'
         PropertiesClassName = 'TcxMemoProperties'
         HeaderAlignmentHorz = taCenter
         Options.Filtering = False
-        Options.Sorting = False
+        Width = 363
       end
       object dbViewDAT: TcxGridDBColumn
         DataBinding.FieldName = 'DAT'
@@ -364,40 +362,30 @@ object FormMain: TFormMain
       GridView = dbView
     end
   end
-  object dxMemData: TdxMemData
+  object mData: TdxMemData
     Indexes = <>
-    Persistent.Data = {
-      5665728FC2F5285C8FFE3F04000000020000000500040043484B000800000006
-      0004004E554D00A00F0000010004005354520004000000090004004441540001
-      010001000000000000F03F01040000006466736601E4440B00}
+    Persistent.Data = {5665728FC2F5285C8FFE3F01000000FF0000000100040053545200}
     SortOptions = []
     Left = 184
     Top = 216
-    object dxMemDataCHK: TBooleanField
+    object mDataCHK: TBooleanField
       FieldName = 'CHK'
-      Required = True
     end
-    object dxMemDataNUM: TFloatField
+    object mDataNUM: TIntegerField
       FieldName = 'NUM'
-      Required = True
-      MaxValue = 100.000000000000000000
+      MaxValue = 100
     end
-    object dxMemDataSTR: TStringField
-      DisplayWidth = 50
+    object mDataSTR: TStringField
       FieldName = 'STR'
-      Required = True
-      Size = 4000
+      Size = 255
     end
-    object dxMemDataDAT: TDateField
-      DisplayWidth = 15
+    object mDataDAT: TDateField
       FieldName = 'DAT'
-      Required = True
-      DisplayFormat = 'dd.mm.yyyy'
     end
   end
-  object dsMemData: TDataSource
-    DataSet = dxMemData
-    Left = 660
-    Top = 140
+  object DataSource: TDataSource
+    DataSet = mData
+    Left = 280
+    Top = 68
   end
 end
