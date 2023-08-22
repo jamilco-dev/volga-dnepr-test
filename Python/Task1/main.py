@@ -28,7 +28,20 @@ def rpkm(counts, lengths):
     L = lengths
     C = counts
     normed = 1e9 * C / (N[np.newaxis, :] * L[:, np.newaxis])
-    return (normed)
+    return normed
 
-if __name__ == '__main__':
-    print('PyCharm')
+
+if __name__ == "__main__":
+    # array1d = np.array([1, 2, 3, 4])
+    # print(array1d)
+    # print(type(array1d))
+    # print(array1d.shape)
+    gene0 = [100, 200]
+    gene1 = [50, 0]
+    gene2 = [350, 100]
+    expression_data = [gene0, gene1, gene2]
+
+    array2d = np.array(expression_data)
+    print(array2d)
+    print(array2d.shape)
+    print(type(array2d))
