@@ -48,14 +48,5 @@ def readCYCNP():
         print(f"Количество кадров: {len(data)}")
 
 
-def a():
-    arr = np.arange(11)
-
-    arr = np.array([reverse_bits(val) for val in arr])
-
-    print(arr)
-
-
 if __name__ == "__main__":
     readCYCNP()
-    # a()
