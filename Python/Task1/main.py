@@ -1,4 +1,5 @@
 import pickle
+import numpy as np
 
 
 def readdCYC():
@@ -9,6 +10,12 @@ def readdCYC():
         print (f"{i}: {data}")
         data=bytearray(file.read(2))
         i +=1
+    file.close()
+
+def readdCYCNP():
+    file=open("Expl/ILVD23.CYC","rb")
+    data = np.fromfile(file,dtype=np.byte)
+    print(data)
     file.close()
 
 def write():
@@ -27,4 +34,5 @@ def read():
 if __name__ == "__main__":
     # write()
     # read()
-    readdCYC()
+    # readdCYC()
+    readdCYCNP()
