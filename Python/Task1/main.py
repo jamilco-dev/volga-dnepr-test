@@ -27,12 +27,14 @@ def readCYCNP():
 
         # Выбираем 6-й канал
         data = data[5]
+        # Name: 5, Length: 22352, dtype: int16
 
         # Фильтруем не нулевые
         data = data[data != 0]
 
         # Применяем маску выбора
         data = data.apply(lambda x: x & 4095)
+        # Name: 5, Length: 18991, dtype: int16
 
         # Реверсируем биты
         data = data.apply(reverse_bits)
@@ -43,9 +45,7 @@ def readCYCNP():
         # Фильтруем по значению > 10
         data = data[data > 10]
 
-        print(data)
-
-        print(len(data))
+        print(f"Количество кадров: {len(data)}")
 
 
 def a():
