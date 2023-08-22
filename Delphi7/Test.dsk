@@ -9,9 +9,15 @@ File_6=SourceModule,'C:\Soft\LIB\DevExpress\ExpressMemData\Sources\dxmdaset.pas'
 File_7=SourceModule,'c:\soft\lib\devexpress\expresscore library\sources\dxCore.pas',0,1,839,72,856,0,0
 
 [Modules]
-Module0=C:\GIT\volga-dnepr-test\Delphi7\Test.dpr
-Count=1
+Module0=C:\GIT\volga-dnepr-test\Delphi7\frmMain.pas
+Module1=C:\GIT\volga-dnepr-test\Delphi7\Test.dpr
+Count=2
 EditWindowCount=1
+
+[C:\GIT\volga-dnepr-test\Delphi7\frmMain.pas]
+ModuleType=SourceModule
+FormState=1
+FormOnTop=1
 
 [C:\GIT\volga-dnepr-test\Delphi7\Test.dpr]
 ModuleType=SourceModule
@@ -23,36 +29,42 @@ FormState=0
 FormOnTop=0
 
 [EditWindow0]
-ViewCount=1
-CurrentView=0
+ViewCount=2
+CurrentView=1
 View0=0
+View1=1
 CodeExplorer=CodeExplorer@EditWindow0
 MessageView=MessageView@EditWindow0
 Create=1
 Visible=1
-State=2
+State=0
 Left=326
 Top=140
 Width=1594
 Height=682
 MaxLeft=-8
-MaxTop=114
-MaxWidth=1936
-MaxHeight=934
-ClientWidth=1920
-ClientHeight=895
+MaxTop=107
+ClientWidth=1578
+ClientHeight=643
 LeftPanelSize=140
 LeftPanelClients=CodeExplorer@EditWindow0
 LeftPanelData=000004000000000000000000000000000000000000000000000100000000000000000C000000436F64654578706C6F726572FFFFFFFF
 RightPanelSize=0
-BottomPanelSize=85
+BottomPanelSize=0
 BottomPanelClients=MessageView@EditWindow0
-BottomPanelData=000004000000000000000000000000000000000000000000000100000000000000000B0000004D65737361676556696577FFFFFFFF
+BottomPanelData=00000400010000000B0000004D6573736167655669657700000000000000000000000000000000000100000000000000000B0000004D65737361676556696577FFFFFFFF
 
 [View0]
 Module=C:\GIT\volga-dnepr-test\Delphi7\Test.dpr
 CursorX=77
-CursorY=16
+CursorY=15
+TopLine=1
+LeftCol=1
+
+[View1]
+Module=C:\GIT\volga-dnepr-test\Delphi7\frmMain.pas
+CursorX=1
+CursorY=1
 TopLine=1
 LeftCol=1
 
@@ -161,7 +173,7 @@ LRDockWidth=190
 Dockable=1
 SplitPos=170
 ArrangeBy=Name
-SelectedItem=
+SelectedItem=Caption
 ExpandedItems=BevelEdges,BorderIcons,Colors.AssignedColors,DataBinding,DataController,DataController.Summary.Options,DateTimeHandling.Filters,Filtering.ColumnPopup,GridView,GridView.DataController.Filter,GridView.DataController.Filter.Options,LevelTabs,LookAndFeel,NavigatorButtons.Append,Options,Persistent,Properties,Properties.Alignment,Properties.SpinButtons,RootLevelOptions,RootLevelStyles,SortOptions,SpeedButtonOptions,Style,Value
 HiddenCategories=
 
@@ -258,26 +270,26 @@ State=0
 Left=0
 Top=12
 Width=140
-Height=795
+Height=631
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=140
-ClientHeight=795
+ClientHeight=631
 TBDockHeight=305
 LRDockWidth=140
 Dockable=1
 
 [MessageView@EditWindow0]
 Create=1
-Visible=1
+Visible=0
 State=0
 Left=12
 Top=0
-Width=1908
+Width=1566
 Height=85
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1908
+ClientWidth=1566
 ClientHeight=85
 TBDockHeight=85
 LRDockWidth=443
