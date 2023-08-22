@@ -1015,6 +1015,39 @@ files = [
 ]
 
 [[package]]
+name = "hypothesis"
+version = "6.82.6"
+description = "A library for property-based testing"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "hypothesis-6.82.6-py3-none-any.whl", hash = "sha256:e99c445140e43f1cceda07b569f2f2d920d95435c6b0e6b507b35b01bb025e9d"},
+    {file = "hypothesis-6.82.6.tar.gz", hash = "sha256:f52ac4180a16208224e3d648fbf0fef8b9ca24863ba4b41bfef30a78c42646bd"},
+]
+
+[package.dependencies]
+attrs = ">=19.2.0"
+exceptiongroup = {version = ">=1.0.0", markers = "python_version < \"3.11\""}
+sortedcontainers = ">=2.1.0,<3.0.0"
+
+[package.extras]
+all = ["backports.zoneinfo (>=0.2.1)", "black (>=19.10b0)", "click (>=7.0)", "django (>=3.2)", "dpcontracts (>=0.4)", "lark (>=0.10.1)", "libcst (>=0.3.16)", "numpy (>=1.17.3)", "pandas (>=1.1)", "pytest (>=4.6)", "python-dateutil (>=1.4)", "pytz (>=2014.1)", "redis (>=3.0.0)", "rich (>=9.0.0)", "tzdata (>=2023.3)"]
+cli = ["black (>=19.10b0)", "click (>=7.0)", "rich (>=9.0.0)"]
+codemods = ["libcst (>=0.3.16)"]
+dateutil = ["python-dateutil (>=1.4)"]
+django = ["django (>=3.2)"]
+dpcontracts = ["dpcontracts (>=0.4)"]
+ghostwriter = ["black (>=19.10b0)"]
+lark = ["lark (>=0.10.1)"]
+numpy = ["numpy (>=1.17.3)"]
+pandas = ["pandas (>=1.1)"]
+pytest = ["pytest (>=4.6)"]
+pytz = ["pytz (>=2014.1)"]
+redis = ["redis (>=3.0.0)"]
+zoneinfo = ["backports.zoneinfo (>=0.2.1)", "tzdata (>=2023.3)"]
+
+[[package]]
 name = "idna"
 version = "3.4"
 description = "Internationalized Domain Names in Applications (IDNA)"
@@ -4931,4 +4964,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "17bc23bd84647808034249826a1c7dc04b7f2aa3bc38a930459ba476e88bae5d"
+content-hash = "d02063e1422f6a4026dbfdb7942edc1e2cf8f896f38d42d4628d6bba57af5ef7"
