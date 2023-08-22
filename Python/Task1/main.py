@@ -18,6 +18,11 @@ def readdCYCNP():
     print(data)
     file.close()
 
+    file=open("Expl/ILVD23.CYC","rb")
+    data = np.fromfile(file,dtype=np.int16)
+    print(data)
+    file.close()
+
 def write():
     file = open("binary.dat",'wb')
     x = [1,2,3,4,5]    #data we wrote in file
