@@ -17,7 +17,7 @@ EditWindowCount=1
 [C:\GIT\volga-dnepr-test\Delphi7\frmMain.pas]
 ModuleType=SourceModule
 FormState=1
-FormOnTop=1
+FormOnTop=0
 
 [C:\GIT\volga-dnepr-test\Delphi7\Test.dpr]
 ModuleType=SourceModule
@@ -52,7 +52,7 @@ LeftPanelData=000004000000000000000000000000000000000000000000000100000000000000
 RightPanelSize=0
 BottomPanelSize=0
 BottomPanelClients=MessageView@EditWindow0
-BottomPanelData=00000400010000000B0000004D6573736167655669657700000000000000000000000000000000000100000000000000000B0000004D65737361676556696577FFFFFFFF
+BottomPanelData=00000400010000000B0000004D65737361676556696577000000000000000000000000000000000001000000000000000000000000FFFFFFFF
 
 [View0]
 Module=C:\GIT\volga-dnepr-test\Delphi7\Test.dpr
@@ -63,8 +63,8 @@ LeftCol=1
 
 [View1]
 Module=C:\GIT\volga-dnepr-test\Delphi7\frmMain.pas
-CursorX=1
-CursorY=1
+CursorX=32
+CursorY=13
 TopLine=1
 LeftCol=1
 
