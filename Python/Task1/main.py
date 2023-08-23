@@ -2,13 +2,8 @@ import numpy as np
 import pandas as pd
 
 
-def reverse_bits(n, no_of_bits=16):
-    result = 0
-    for i in range(no_of_bits):
-        result <<= 1
-        result |= n & 1
-        n >>= 1
-    return result
+def reverse_bytes(data):
+    return int.from_bytes(data.to_bytes(2, "little"), "big")
 
 
 def readCYCNP():
@@ -26,18 +21,17 @@ def readCYCNP():
         data = pd.DataFrame(data)
 
         # Выбираем 6-й канал
+        print(data)
         data = data[5]
-        # Name: 5, Length: 22352, dtype: int16
 
         # Фильтруем не нулевые
         data = data[data != 0]
 
         # Применяем маску выбора
         data = data.apply(lambda x: x & 4095)
-        # Name: 5, Length: 18991, dtype: int16
 
         # Реверсируем биты
-        data = data.apply(reverse_bits)
+        data = data.apply(reverse_bytes)
 
         # Умножаем на коэфф
         data = data.apply(lambda x: x * 0.3048)
